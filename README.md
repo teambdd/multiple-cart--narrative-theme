@@ -5,7 +5,10 @@ PENTING! Ini adalah tutorial lanjutan dan tidak didukung oleh Shopify. Pengetahu
 
 > modifikasi ini bertujuan untuk menambahkan product lebih dari 1 sayangnya ini masih dengan sistem manual belum bisa otomatis, mungkin lain waktu akan ada perubahan kembali untuk kustomtasi ini.
 
-> Untuk menambahkan modifikasi ini diperlukan beberapa perubahan file. untuk tema yang lain bisa menyesuaikan dengan kode disini
+> Untuk menambahkan modifikasi ini diperlukan beberapa perubahan, untuk tema lain bisa disesuaikan dengan file dibawah ini 
+   file yang harus kita modifikasi adalah :
+   1. product-template.liquid
+   2. theme.js
 
 ### Instalasi
 - Buat button add to cart baru, dibawah button add to cart yang sebelumnya, seperti ini.  
@@ -62,11 +65,14 @@ IMPORTANT! This is an advanced tutorial and is not supported by Shopify. Knowled
 
 > This modification aims to add more than 1 product, unfortunately this is still a manual system that cannot be automated, maybe another time there will be a change back to this customization.
 
-> To add this modification some file changes are required. for other themes you can adjust the code here
+> To add this modification some changes are needed, for other themes can be adjusted with the file below.
+The file that we have to modify is :
+1. product-template.liquid
+2. theme.js
 
 ### Installation
 
-- Create a new add to cart button, under the previous add to cart button, like this.
+- Open product-template.liquid and create a new add to cart button, under the previous add to cart button, like this.
 
     ```
     <button type="submit" name="add" {% unless current_variant.available %} aria-disabled="true"{% endunless %} aria-label="{% unless current_variant.available %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endunless %}" class="btn product-form__cart-submit{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}" data-add-to-cart>
